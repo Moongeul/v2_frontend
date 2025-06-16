@@ -1,0 +1,6 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+const SvgEmptyKidStarIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 32 33" {...props}><mask id="empty_kid_star_icon_svg__a" width={32} height={33} x={0} y={0} maskUnits="userSpaceOnUse" style={{
+    maskType: "alpha"
+  }}><path fill="#D9D9D9" d="M0 .5h32v32H0z" /></mask><g mask="url(#empty_kid_star_icon_svg__a)"><path fill="#CACACA" d="m10.833 9.956 3.477-4.628q.318-.427.755-.628.438-.2.935-.2t.935.2q.437.2.755.628l3.477 4.628 5.359 1.823q.712.241 1.097.808.384.567.385 1.253 0 .316-.093.628a1.9 1.9 0 0 1-.305.599l-3.513 4.764.134 5.107q.033.94-.622 1.584t-1.524.645l-.606-.075L16 25.477l-5.48 1.615a.9.9 0 0 1-.321.07q-.155.005-.284.005a2.1 2.1 0 0 1-1.533-.645q-.645-.644-.613-1.584l.134-5.14-3.506-4.731a2 2 0 0 1-.304-.604 2.188 2.188 0 0 1 .303-1.885 2.13 2.13 0 0 1 1.104-.824zm.839 1.147L5.949 13.03a.8.8 0 0 0-.526.525.73.73 0 0 0 .115.731l3.724 5.12-.16 5.547a.77.77 0 0 0 .308.692q.334.257.744.128L16 24.095l5.846 1.713a.78.78 0 0 0 .744-.129.77.77 0 0 0 .307-.692l-.159-5.58 3.724-5.053a.73.73 0 0 0 .115-.731.81.81 0 0 0-.526-.526l-5.723-1.994-3.687-4.91A.74.74 0 0 0 16 5.858a.74.74 0 0 0-.641.333z" /></g></svg>;
+export default SvgEmptyKidStarIcon;

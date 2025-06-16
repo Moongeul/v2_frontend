@@ -1,0 +1,6 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+const SvgCancelIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 25" {...props}><mask id="cancel_icon_svg__a" width={24} height={25} x={0} y={0} maskUnits="userSpaceOnUse" style={{
+    maskType: "alpha"
+  }}><path fill="#D9D9D9" d="M0 .271h24v24H0z" /></mask><g mask="url(#cancel_icon_svg__a)"><path fill="#CACACA" d="m8.4 16.58 3.6-3.6 3.6 3.6.708-.709-3.6-3.6 3.6-3.6-.708-.707-3.6 3.6-3.6-3.6-.708.707 3.6 3.6-3.6 3.6zm3.603 4.691a8.8 8.8 0 0 1-3.51-.708 9.1 9.1 0 0 1-2.859-1.923 9.1 9.1 0 0 1-1.925-2.857A8.75 8.75 0 0 1 3 12.275q0-1.868.708-3.51a9.1 9.1 0 0 1 1.923-2.86 9.1 9.1 0 0 1 2.857-1.924 8.75 8.75 0 0 1 3.509-.71q1.866 0 3.51.709a9.1 9.1 0 0 1 2.859 1.923 9.1 9.1 0 0 1 1.925 2.856A8.75 8.75 0 0 1 21 12.27a8.8 8.8 0 0 1-.709 3.51 9.1 9.1 0 0 1-1.922 2.858 9.1 9.1 0 0 1-2.857 1.925 8.75 8.75 0 0 1-3.509.71" /></g></svg>;
+export default SvgCancelIcon;

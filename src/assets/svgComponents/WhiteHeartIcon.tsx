@@ -1,0 +1,6 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+const SvgWhiteHeartIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 32 32" {...props}><mask id="white-heart-icon_svg__a" width={32} height={32} x={0} y={0} maskUnits="userSpaceOnUse" style={{
+    maskType: "alpha"
+  }}><path fill="#D9D9D9" d="M0 0h32v32H0z" /></mask><g mask="url(#white-heart-icon_svg__a)"><path fill="#fff" d="m16 26.2-.838-.768q-3.319-3.031-5.48-5.203-2.163-2.17-3.426-3.824-1.265-1.655-1.76-2.984A7.5 7.5 0 0 1 4 10.769q0-2.501 1.698-4.202 1.699-1.7 4.2-1.7 1.8 0 3.358.951T16 8.595q1.251-1.858 2.781-2.793a6.25 6.25 0 0 1 3.322-.935q2.5 0 4.199 1.7T28 10.769a7.5 7.5 0 0 1-.496 2.652q-.496 1.33-1.758 2.98-1.26 1.65-3.421 3.825t-5.487 5.206zm0-1.52q3.249-2.955 5.347-5.062t3.329-3.675q1.23-1.566 1.713-2.778a6.4 6.4 0 0 0 .483-2.393q0-2.05-1.361-3.414-1.361-1.363-3.403-1.363-1.66 0-3.04.96t-2.557 2.956h-1.027q-1.198-2-2.573-2.958a5.17 5.17 0 0 0-3.019-.958q-2.017 0-3.39 1.363t-1.374 3.424q0 1.176.486 2.388.486 1.213 1.704 2.78t3.332 3.666T16 24.68" /></g></svg>;
+export default SvgWhiteHeartIcon;

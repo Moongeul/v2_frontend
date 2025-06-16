@@ -1,0 +1,6 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+const SvgGrayCommentIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><mask id="gray-comment-icon_svg__a" width={24} height={24} x={0} y={0} maskUnits="userSpaceOnUse" style={{
+    maskType: "alpha"
+  }}><path fill="#D9D9D9" d="M0 0h24v24H0z" /></mask><g mask="url(#gray-comment-icon_svg__a)"><path fill="#646464" d="m2.461 21.539 1.566-5.316a12 12 0 0 1-.751-2.062A8.5 8.5 0 0 1 3 12q0-1.867.708-3.51a9.1 9.1 0 0 1 1.923-2.857 9.1 9.1 0 0 1 2.857-1.924A8.8 8.8 0 0 1 11.997 3q1.866 0 3.51.708a9.1 9.1 0 0 1 2.859 1.923 9.1 9.1 0 0 1 1.925 2.857A8.75 8.75 0 0 1 21 11.997a8.8 8.8 0 0 1-.709 3.51 9.1 9.1 0 0 1-1.924 2.859 9.1 9.1 0 0 1-2.857 1.925A8.8 8.8 0 0 1 12 21a8.5 8.5 0 0 1-2.161-.276 12 12 0 0 1-2.062-.751zM3.95 20.05l3.2-.95a2.7 2.7 0 0 1 .712-.094q.325.006.688.194a7.4 7.4 0 0 0 1.675.6Q11.1 20 12 20q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4 6.325 6.325 4 12q0 .9.2 1.775t.6 1.675q.175.325.197.688a1.8 1.8 0 0 1-.097.712z" /></g></svg>;
+export default SvgGrayCommentIcon;

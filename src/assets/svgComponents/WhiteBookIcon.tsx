@@ -1,0 +1,6 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+const SvgWhiteBookIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 40 41" {...props}><mask id="white-book-icon_svg__a" width={40} height={41} x={0} y={0} maskUnits="userSpaceOnUse" style={{
+    maskType: "alpha"
+  }}><path fill="#D9D9D9" d="M0 .761h40v40H0z" /></mask><g mask="url(#white-book-icon_svg__a)"><path fill="#fff" d="M13.808 33.76a3.67 3.67 0 0 1-2.694-1.113A3.67 3.67 0 0 1 10 29.953V11.145q0-1.82 1.282-3.103 1.281-1.281 3.102-1.281H31v20.654q-1.02 0-1.722.753a2.53 2.53 0 0 0-.701 1.785q0 1.032.701 1.785a2.26 2.26 0 0 0 1.722.753v1.27zm-2.539-6.645a3.5 3.5 0 0 1 1.142-.72 3.8 3.8 0 0 1 1.397-.25h1.269V8.03h-.693q-1.29 0-2.203.912a3 3 0 0 0-.912 2.21zm5.077-.97h13.385V8.03H16.346zm-2.545 6.346h14.471a3.6 3.6 0 0 1-.714-1.154 3.8 3.8 0 0 1-.25-1.384q0-.729.249-1.383.249-.653.72-1.155H13.802q-1.062 0-1.797.738a2.46 2.46 0 0 0-.735 1.8q0 1.07.735 1.804t1.797.734" /></g></svg>;
+export default SvgWhiteBookIcon;

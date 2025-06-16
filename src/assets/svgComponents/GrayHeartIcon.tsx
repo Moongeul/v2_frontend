@@ -1,0 +1,6 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+const SvgGrayHeartIcon = (props: SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24" {...props}><mask id="gray-heart-icon_svg__a" width={24} height={24} x={0} y={0} maskUnits="userSpaceOnUse" style={{
+    maskType: "alpha"
+  }}><path fill="#D9D9D9" d="M0 0h24v24H0z" /></mask><g mask="url(#gray-heart-icon_svg__a)"><path fill="#646464" d="m12 19.654-.758-.685a136 136 0 0 1-4.05-3.829q-1.601-1.592-2.528-2.808-.927-1.217-1.296-2.201A5.6 5.6 0 0 1 3 8.15q0-1.908 1.296-3.204T7.5 3.65q1.32 0 2.475.675T12 6.288Q12.87 5 14.025 4.325A4.83 4.83 0 0 1 16.5 3.65q1.908 0 3.204 1.296T21 8.15q0 .996-.368 1.98-.369.985-1.296 2.202-.926 1.216-2.519 2.808a117 117 0 0 1-4.06 3.83zm0-1.354q2.4-2.17 3.95-3.716 1.55-1.548 2.45-2.685t1.25-2.015T20 8.15q0-1.5-1-2.5t-2.5-1q-1.193 0-2.204.682-1.01.681-1.807 2.052h-.978q-.816-1.39-1.817-2.062A3.85 3.85 0 0 0 7.5 4.65q-1.48 0-2.49 1T4 8.15q0 .855.35 1.734.35.878 1.25 2.015t2.45 2.675A133 133 0 0 0 12 18.3" /></g></svg>;
+export default SvgGrayHeartIcon;
