@@ -11,11 +11,12 @@ export default function Home() {
 
   return (
     <main>
-      <Header headerType={"HOME"}/>
-      <HomeMenu selectedHomeMenuContent={selectedHomeMenuContent} setSelectedHomeMenuContent={setSelectedHomeMenuContent}></HomeMenu>
-      <div>
-
-      </div>
+      <Header headerType={'HOME'} />
+      <HomeMenu
+        selectedHomeMenuContent={selectedHomeMenuContent}
+        setSelectedHomeMenuContent={setSelectedHomeMenuContent}
+      />
+      <div></div>
       <NavBar />
     </main>
   )
