@@ -22,7 +22,7 @@ const Header = (props: Props) => {
                 onBack
                   ? onBack
                   : () => {
-                    router.back()
+                      router.back()
                     }
               }
               width={18}
@@ -36,7 +36,13 @@ const Header = (props: Props) => {
         return (
           <div className="flex justify-between px-5 py-3">
             <div className="head-bold-22 text-white">Logo</div>
-            <AlarmIcon width={32} height={32} />
+            <AlarmIcon
+              onClick={() => {
+                router.push('/alarm')
+              }}
+              width={32}
+              height={32}
+            />
           </div>
         )
       default:
