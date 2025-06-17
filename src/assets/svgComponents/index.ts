@@ -1,6 +1,7 @@
 export { default as Vector } from './Vector'
 export { default as AlarmIcon } from './AlarmIcon'
 export { default as ArrowDropDownIcon } from './ArrowDropDownIcon'
+export { default as ArrowDropUpIcon } from './ArrowDropUpIcon'
 export { default as BlackRightArrowIcon } from './BlackRightArrowIcon'
 export { default as BookmarkIcon } from './BookmarkIcon'
 export { default as BrandStarIcon } from './BrandStarIcon'
