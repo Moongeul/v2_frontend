@@ -3,12 +3,24 @@ import Button from '@/components/common/Button'
 import { SignUpStepType } from '@/types/sign-up'
 import { Dispatch, SetStateAction } from 'react'
 import TermsOfUseCheckbox from '@/components/sign-up/TermsOfUseCheckbox'
+import { useTermsStore } from '@/store/termsStore'
+import { getMemberInitialMarketing } from '@/lib/sign-up'
 
 interface TermsAgreementPageProps {
   setStep: Dispatch<SetStateAction<SignUpStepType>>
 }
 
 export default function TermsAgreementPage({ setStep }: TermsAgreementPageProps) {
+  const termsOfServiceOptions = useTermsStore((state) => state.termsOfServiceOptions)
+  const personalInformation = useTermsStore((state) => state.personalInformation)
+  const marketingInformation = useTermsStore((state) => state.marketingInformation)
+
+  const handleSubmit = () => {
+    getMemberInitialMarketing(marketingInformation ? 'ok' : 'no').then(() => {
+      setStep('TagPreferencePage')
+    })
+  }
+
   return (
     <main className="min-h-screen">
       <Header headerType={'DYNAMIC'}>이용 약관동의</Header>
@@ -27,10 +39,10 @@ export default function TermsAgreementPage({ setStep }: TermsAgreementPageProps)
 
       <div className="bg-background fixed bottom-0 w-full px-5 pt-2 pb-[32px]">
         <Button
-          onClick={() => {
-            setStep('TagPreferencePage')
-          }}
-          className="button bg-deep-dark-gray flex h-[48px] w-full items-center justify-center gap-x-2 rounded-full text-white"
+          disabled={!(termsOfServiceOptions && personalInformation)}
+          onClick={handleSubmit}
+          state={!(termsOfServiceOptions && personalInformation) ? 'disabled' : 'active'}
+          customClassName={'w-full'}
         >
           다음
         </Button>
