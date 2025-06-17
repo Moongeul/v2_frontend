@@ -1,10 +1,17 @@
 import Image from 'next/image'
 import { KidStarIcon } from '@/assets/svgComponents'
+import { useRouter } from 'next/navigation'
 
 interface BookshelfItemProps {}
 export default function BookshelfItem({}: BookshelfItemProps) {
+  const router = useRouter()
   return (
-    <div className="flex flex-col items-center justify-center gap-y-2 border-b p-2">
+    <div
+      onClick={() => {
+        router.push(`/mypage/read/${1}`)
+      }}
+      className="flex flex-col items-center justify-center gap-y-2 border-b p-2"
+    >
       <Image src="/book.png" width={76} height={115} className={'mx-1'} alt={'book'} />
       <section className="flex h-[92px] w-full flex-col gap-y-1">
         <div className="flex items-center gap-x-1">

@@ -5,17 +5,28 @@ import Button from '@/components/common/Button'
 import DropBox from '@/components/common/DropBox'
 import { useState } from 'react'
 import BookshelfItem from '@/components/mypage/read/BookshelfItem'
+import CreateReadBook from '@/components/mypage/read/CreateReadBook'
 
 export default function Read() {
+  const [isCreateReadBookPageOpen, setIsCreateReadBookPageOpen] = useState<boolean>(false)
   const [filter, setFilter] = useState<string>('전체 보기')
   const filterContents = ['전체 보기', '월별 보기', '평점 높은 순', '평점 낮은 순']
   const [isFilterClicked, setIsFilterClicked] = useState(false)
-  return (
+  return isCreateReadBookPageOpen ? (
+    <CreateReadBook />
+  ) : (
     <main>
       <Header
         headerType={'DYNAMIC'}
         rightComponent={
-          <Button customClassName={'w-[48px]'} size={'large'} state={'main'}>
+          <Button
+            onClick={() => {
+              setIsCreateReadBookPageOpen(!isCreateReadBookPageOpen)
+            }}
+            customClassName={'w-[48px]'}
+            size={'large'}
+            state={'main'}
+          >
             추가
           </Button>
         }
