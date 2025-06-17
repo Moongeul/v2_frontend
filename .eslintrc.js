@@ -3,8 +3,7 @@ module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
   extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
+    'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended', // 👉 prettier와 연동
   ],
@@ -16,8 +15,6 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error', // prettier 룰을 eslint에 적용
-    'react/react-in-jsx-scope': 'off', // react 17 이상에선 필요 없음
-    '@typescript-eslint/no-unused-vars': ['warn'],
   },
   settings: {
     react: { version: 'detect' },
