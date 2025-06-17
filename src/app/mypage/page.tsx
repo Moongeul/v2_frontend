@@ -21,7 +21,7 @@ export default function Mypage() {
       <section className="mt-[320px] mb-[80px] flex flex-col gap-y-2 px-5 pt-[10px]">
         {mypageContents.map((content) => {
           return (
-            <div className="border-light-gray flex justify-between border-b py-3 pr-2">
+            <div key={content.content} className="border-light-gray flex justify-between border-b py-3 pr-2">
               <p className="title-regular-16">{content.content}</p>
               <BlackRightArrowIcon width={18} height={18} />
             </div>

@@ -3,10 +3,13 @@ import {
   SelectedBookIcon,
   SelectedHomeIcon,
   SelectedSearchIcon,
-  SelectedWriteIcon, UnselectedBookIcon,
+  SelectedWriteIcon,
+  UnselectedBookIcon,
   UnselectedHomeIcon,
-  UnselectedSearchIcon, UnselectedWriteIcon,
+  UnselectedSearchIcon,
+  UnselectedWriteIcon,
 } from '@/assets/svgComponents'
+import Image from 'next/image'
 
 const NavBar = () => {
   const router = useRouter()
@@ -40,12 +43,12 @@ const NavBar = () => {
       content: 'My',
       selectedIcon: (
         <div className="flex h-[1.625rem] w-[1.625rem] items-center justify-center overflow-hidden">
-          <img src="/profile.jpg" className="h-full w-full rounded-full object-cover" />
+          <Image src="/profile.jpg" fill alt="프로필" className="rounded-full object-cover" />
         </div>
       ),
       unselectedHomeIcon: (
         <div className="flex h-[1.625rem] w-[1.625rem] items-center justify-center overflow-hidden">
-          <img src="/profile.jpg" className="h-full w-full rounded-full object-cover" />
+          <Image src="/profile.jpg" fill alt="프로필" className="rounded-full object-cover" />
         </div>
       ),
       path: '/mypage',

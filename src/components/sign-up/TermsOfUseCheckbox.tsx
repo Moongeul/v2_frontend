@@ -42,7 +42,7 @@ export default function TermsOfUseCheckbox() {
     } else {
       setTermsState({ allOptions: false }) // 하나라도 false면 allOptions는 false
     }
-  }, [termsOfServiceOptions, personalInformation, marketingInformation])
+  }, [termsOfServiceOptions, personalInformation, marketingInformation, setTermsState])
 
   const handleAllOptionsClick = () => {
     const newAllOptions = !allOptions
@@ -80,7 +80,7 @@ export default function TermsOfUseCheckbox() {
             <div
               key={termsOfUseContent.key}
               className={'flex justify-between py-3'}
-              onClick={(e) => {
+              onClick={() => {
                 handleIndividualOptionClick(termsOfUseContent.key, termsOfUseContent.state)
               }}
             >

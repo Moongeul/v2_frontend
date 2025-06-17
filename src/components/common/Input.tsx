@@ -36,7 +36,9 @@ export default function Input({
           value={inputValue}
           onChange={(e) => {
             setInputValue(e.target.value)
-            onChange ? onChange() : null
+            if (onChange) {
+              onChange()
+            }
           }}
           className={'placeholder:text-dark-gray title-regular-14 w-full outline-none'}
           placeholder={placeholder}

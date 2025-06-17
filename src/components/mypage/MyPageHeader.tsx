@@ -1,5 +1,6 @@
 import { LightGrayRightArrowIcon, WhiteBookIcon } from '@/assets/svgComponents'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 const MyPageHeader = () => {
   const router = useRouter()
@@ -7,7 +8,7 @@ const MyPageHeader = () => {
     <header className="fixed top-[100px] flex w-full flex-col gap-y-[28px] bg-black p-5">
       <section className="flex items-center gap-x-3">
         <div className="flex h-[72px] w-[72px] items-center justify-center overflow-hidden">
-          <img src="/profile.jpg" className="h-full w-full rounded-full object-cover" />
+          <Image src="/profile.jpg" fill alt="프로필" className="rounded-full object-cover" />
         </div>
         <div className="flex flex-col gap-y-1">
           <div className="title-medium-16 flex items-center gap-x-4 text-white">

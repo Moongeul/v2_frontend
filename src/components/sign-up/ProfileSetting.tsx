@@ -31,7 +31,7 @@ export default function ProfileSetting({ setStep }: ProfileSettingProps) {
    */
   const handleImagePreview = async () => {
     const files = imgRef.current?.files
-    let reader = new FileReader()
+    const reader = new FileReader()
     if (files) {
       reader.readAsDataURL(files[0])
       reader.onloadend = () => {
@@ -136,7 +136,7 @@ export default function ProfileSetting({ setStep }: ProfileSettingProps) {
                 onClick={async () => {
                   if (nickname !== '') {
                     setIsNicknameChecking(true)
-                    const result: ApiResponse = await postMemberCheckNickname(nickname)
+                    const result: ApiResponse<void> = await postMemberCheckNickname(nickname)
                     console.log('res', result)
                     setNickNameValidationResult(result.success)
                     setIsInvalidModalOpen(false)
