@@ -42,12 +42,12 @@ const NavBar = () => {
     {
       content: 'My',
       selectedIcon: (
-        <div className="flex h-[1.625rem] w-[1.625rem] items-center justify-center overflow-hidden">
+        <div className="relative flex h-[1.625rem] w-[1.625rem] items-center justify-center overflow-hidden">
           <Image src="/profile.jpg" fill alt="프로필" className="rounded-full object-cover" />
         </div>
       ),
       unselectedHomeIcon: (
-        <div className="flex h-[1.625rem] w-[1.625rem] items-center justify-center overflow-hidden">
+        <div className="relative flex h-[1.625rem] w-[1.625rem] items-center justify-center overflow-hidden">
           <Image src="/profile.jpg" fill alt="프로필" className="rounded-full object-cover" />
         </div>
       ),
