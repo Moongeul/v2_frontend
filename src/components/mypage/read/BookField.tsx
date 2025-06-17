@@ -83,7 +83,7 @@ export default function BookField() {
         />
       </div>
       {bookInfo ? (
-        <section onClick={() => {}} className="border-light-gray mt-2 rounded-[12px] border p-2">
+        <section onClick={() => {}} className="border-light-gray mt-2 flex justify-between rounded-[12px] border p-2">
           <div className="flex items-center gap-x-2">
             <Image className="mx-[5px]" width={37} height={56} src={bookInfo.image} alt={'book'} />
             <div className="flex flex-col">
@@ -94,9 +94,11 @@ export default function BookField() {
           <CancelIcon
             width={18}
             height={18}
+            className="whitespace-nowrap"
             onClick={() => {
               setReadBookState({ bookInfo: undefined })
               setBookListResult([])
+              setSearchValue('')
             }}
           />
         </section>
