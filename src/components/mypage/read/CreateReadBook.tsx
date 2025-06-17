@@ -14,7 +14,7 @@ export default function CreateReadBook() {
 
       <section className="mt-[96px] flex flex-col gap-y-[32px] px-5">
         {/* 책 선택 */}
-        <BookField title={'나미야 잡화점의 기적'} author={'히가시노 게이고'} />
+        <BookField />
         {/*읽은 날*/}
         <ReadDateField />
         {/*평점*/}

@@ -5,3 +5,8 @@ export interface ApiResponse<T> {
   success: boolean
   data?: T
 }
+export interface PageNation {
+  last: boolean
+  page: number
+  totalSize: number
+}
