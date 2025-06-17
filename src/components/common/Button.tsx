@@ -1,9 +1,28 @@
 import { ReactNode } from 'react'
 
-export interface Button1Props {
+const styleSize = {
+  small: 'h-[14px]',
+  medium: 'h-[36px]',
+  large: 'h-[48px]',
+}
+
+const styleState = {
+  active: 'bg-deep-dark-gray text-white',
+  disabled: 'bg-light-gray text-dark-gray',
+  secondary: 'border border-light-gray text-dark-gray',
+  main: 'bg-brand-color text-white',
+  border: 'border border-brand-color text-black',
+}
+
+export interface ButtonProps {
+  //style
+  state?: 'active' | 'disabled' | 'secondary' | 'main' | 'border'
+  customClassName: string
+  size?: 'small' | 'medium' | 'large'
+
+  //기능
   children: ReactNode
-  className?: string
-  onClick: () => void
+  onClick?: () => void
   buttonType?: 'button' | 'submit'
   disabled?: boolean
   rightIcon?: ReactNode
@@ -12,13 +31,17 @@ export interface Button1Props {
 
 const Button = ({
   children,
-  className,
   onClick,
   buttonType = 'button',
   disabled = false,
   rightIcon,
   leftIcon,
-}: Button1Props) => {
+  state = 'active',
+  size = 'large',
+  customClassName, //넓이 etc..
+}: ButtonProps) => {
+  const baseStyle = 'flex items-center justify-center button rounded-full'
+  const className = `${baseStyle} ${styleState[state]} ${styleSize[size]} ${customClassName}`
   return (
     <button disabled={disabled} type={buttonType} onClick={onClick} className={`${className}`}>
       {leftIcon ? leftIcon : null}
