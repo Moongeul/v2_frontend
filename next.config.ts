@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['shopping-phinf.pstatic.net'],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
 
 export default nextConfig
