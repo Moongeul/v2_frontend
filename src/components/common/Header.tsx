@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { HeaderType } from '@/types/common'
 import { useRouter } from 'next/navigation'
-import { AlarmIcon, LeftArrowIcon } from '@/assets/svgComponents'
+import { AlarmIcon, LeftArrowIcon, LogoIcon } from '@/assets/svgComponents'
 
 interface Props {
   headerType: HeaderType
@@ -35,7 +35,7 @@ const Header = (props: Props) => {
       case 'HOME':
         return (
           <div className="flex justify-between px-5 py-3">
-            <div className="head-bold-22 text-white">Logo</div>
+            <LogoIcon width={133} height={30} />
             <AlarmIcon
               onClick={() => {
                 router.push('/alarm')
