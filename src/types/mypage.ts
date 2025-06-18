@@ -1,8 +1,8 @@
 import { PageNation } from '@/types/common'
 
 export interface CreateReadBookType {
-  bookInfo: BookInfoType
-  readBooks: ReadBookType
+  bookInfo?: BookInfoType
+  readBooks?: ReadBookType
 }
 
 export interface BookInfoType {
@@ -16,10 +16,10 @@ export interface BookInfoType {
 }
 
 export interface ReadBookType {
-  readDate: string
-  rating: number
-  oneLineReview: string
-  userBookTagList: UserBookTagType[]
+  readDate?: string
+  rating?: number
+  oneLineReview?: string
+  userBookTagList?: UserBookTagType[]
 }
 
 export interface UserBookTagType {

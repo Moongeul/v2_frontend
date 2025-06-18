@@ -1,9 +1,13 @@
+import { Dispatch, SetStateAction } from 'react'
 import { tagList } from '@/utils/common'
 import Tag from '@/components/common/Tag'
-import { useState } from 'react'
 
-export default function TagField() {
-  const [selectedTagList, setSelectedTagList] = useState<string[]>([])
+interface TagFieldProps {
+  selectedTagList: string[]
+  setSelectedTagList: Dispatch<SetStateAction<string[]>>
+}
+
+export default function TagField({ selectedTagList, setSelectedTagList }: TagFieldProps) {
   return (
     <section>
       <section className={'flex flex-col gap-y-2'}>

@@ -2,7 +2,7 @@ import { Dispatch, ReactNode, SetStateAction } from 'react'
 
 interface InputProps {
   inputValue: string
-  setInputValue: Dispatch<SetStateAction<string>>
+  setInputValue?: Dispatch<SetStateAction<string>>
   type: 'line' | 'round'
   rightIcon?: ReactNode
   leftIcon?: ReactNode
@@ -26,7 +26,7 @@ export default function Input({
 }: InputProps) {
   return (
     <div
-      className={`${type === 'line' ? 'border border-b p-2' : 'rounded-full border px-4'} flex h-[48px] items-center justify-between ${customClassName}`}
+      className={`${type === 'line' ? 'border-b p-2' : 'rounded-full border px-4'} flex h-[48px] items-center justify-between ${customClassName}`}
     >
       <div className={`${type === 'line' ? 'gap-x-2' : 'gap-x-1'} flex w-full items-center`}>
         {leftIcon && <div className="flex h-full flex-shrink-0 items-center justify-center">{leftIcon}</div>}
@@ -35,7 +35,9 @@ export default function Input({
           onBlur={onBlur}
           value={inputValue}
           onChange={(e) => {
-            setInputValue(e.target.value)
+            if (setInputValue) {
+              setInputValue(e.target.value)
+            }
             if (onChange) {
               onChange()
             }

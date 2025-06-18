@@ -1,9 +1,9 @@
 'use client'
 
+import { useState } from 'react'
 import Header from '@/components/common/Header'
 import Button from '@/components/common/Button'
 import DropBox from '@/components/common/DropBox'
-import { useState } from 'react'
 import BookshelfItem from '@/components/mypage/read/BookshelfItem'
 import CreateReadBook from '@/components/mypage/read/CreateReadBook'
 
@@ -13,7 +13,7 @@ export default function Read() {
   const filterContents = ['전체 보기', '월별 보기', '평점 높은 순', '평점 낮은 순']
   const [isFilterClicked, setIsFilterClicked] = useState(false)
   return isCreateReadBookPageOpen ? (
-    <CreateReadBook />
+    <CreateReadBook setIsCreateReadBookPageOpen={setIsCreateReadBookPageOpen} />
   ) : (
     <main>
       <Header

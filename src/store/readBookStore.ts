@@ -14,7 +14,12 @@ interface useReadBookStoreType {
 
 export const useReadBookStore = create<useReadBookStoreType>((set) => ({
   bookInfo: undefined,
-  readBooks: undefined,
+  readBooks: {
+    rating: 0,
+    oneLineReview: '',
+    userBookTagList: [],
+    readDate: '',
+  },
   setReadBookState: (params: ReadBookStoreType) => {
     set((state) => ({
       ...state,
