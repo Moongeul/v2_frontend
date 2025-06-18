@@ -8,5 +8,5 @@ export interface ApiResponse<T> {
 export interface PageNation {
   last: boolean
   page: number
-  totalSize: number
+  totalSize?: number
 }

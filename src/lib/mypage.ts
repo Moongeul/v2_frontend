@@ -28,3 +28,18 @@ export const postBookShelfRead = async (readBookData: CreateReadBookType) => {
   const data = await response.json()
   return data
 }
+
+/**
+ * 읽은 책 책장에서 불러오기
+ */
+export const getBookshelfRead = async (page: number, size: number, filter: number) => {
+  const response = await authorizedFetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/bookshelf/read?page=${page}&size=${size}&filter=${filter}`,
+    {
+      method: 'GET',
+    }
+  )
+
+  const data = await response.json()
+  return data
+}

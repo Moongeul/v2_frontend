@@ -30,3 +30,23 @@ export interface UserBookTagType {
 export interface SearchBookResponseType extends PageNation {
   bookList: BookInfoType[]
 }
+
+export interface ReadBookShelfResponseType extends PageNation {
+  totalBookCnt: number
+  monthlyInfoList: ReadBookShelfType[]
+}
+
+// 읽은 책장의 날짜별로 데이터를 불러오는 Type
+export interface ReadBookShelfType {
+  date: string
+  monthlyBookCnt: number
+  monthlyReadBookList: MonthlyReadBookType[]
+}
+export interface MonthlyReadBookType {
+  id: number
+  isbn: string
+  bookImage: string
+  rating: number
+  title: string
+  readDate: string
+}
