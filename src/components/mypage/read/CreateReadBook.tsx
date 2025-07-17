@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import Header from '@/components/common/Header'
 import Button from '@/components/common/Button'
 import BookField from '@/components/mypage/read/BookField'
@@ -8,38 +8,84 @@ import RatingField from '@/components/mypage/read/RatingField'
 import TagField from '@/components/mypage/read/TagField'
 import { UserBookTagType } from '@/types/mypage'
 import { useReadBookStore } from '@/store/readBookStore'
-import { postBookShelfRead } from '@/lib/mypage'
+import { patchBookShelfRead, postBookShelfRead } from '@/lib/mypage'
+import { useParams } from 'next/navigation'
 
 interface CreateReadBookProps {
   setIsCreateReadBookPageOpen: Dispatch<SetStateAction<boolean>>
 }
 
 export default function CreateReadBook({ setIsCreateReadBookPageOpen }: CreateReadBookProps) {
-  const [selectedTagList, setSelectedTagList] = useState<string[]>([])
+  const [selectedTagList, setSelectedTagList] = useState<UserBookTagType[]>([])
   const readBooks = useReadBookStore((state) => state.readBooks)
   const bookInfo = useReadBookStore((state) => state.bookInfo)
   const setReadBookState = useReadBookStore((state) => state.setReadBookState)
+  const params = useParams()
 
-  const convertTags = (selectedTagList: string[]) => {
-    return selectedTagList.map(
-      (tag): UserBookTagType => ({
-        tagId: 0,
-        tag: tag,
-      })
-    )
-  }
+  useEffect(() => {
+    if (readBooks && readBooks.userBookTagList) {
+      setSelectedTagList(readBooks.userBookTagList)
+    }
+  }, [])
 
   const handleSubmit = async () => {
-    setReadBookState({ readBooks: { ...readBooks, userBookTagList: convertTags(selectedTagList) } })
-    const result = await postBookShelfRead({ bookInfo: bookInfo, readBooks: readBooks })
-    if (result) {
-      setIsCreateReadBookPageOpen(false)
+    const updatedReadBooks = { ...readBooks, userBookTagList: selectedTagList }
+    if (!params.id) {
+      //새로 생성할 때,
+      setReadBookState({ readBooks: updatedReadBooks })
+      const result = await postBookShelfRead({ bookInfo: bookInfo, readBooks: updatedReadBooks })
+      if (result) {
+        setIsCreateReadBookPageOpen(false)
+        setReadBookState({
+          bookInfo: undefined,
+          readBooks: {
+            rating: 0,
+            oneLineReview: '',
+            userBookTagList: [],
+            readDate: '',
+          },
+        })
+      }
+    } else {
+      //수정할 때,
+      console.log(updatedReadBooks)
+      setReadBookState({ readBooks: updatedReadBooks })
+      const result = await patchBookShelfRead(params.id, { bookInfo: bookInfo, readBooks: updatedReadBooks })
+      if (result) {
+        setIsCreateReadBookPageOpen(false)
+        setReadBookState({
+          bookInfo: undefined,
+          readBooks: {
+            rating: 0,
+            oneLineReview: '',
+            userBookTagList: [],
+            readDate: '',
+          },
+        })
+      }
     }
   }
 
   return (
     <main>
-      <Header headerType={'DYNAMIC'}>읽은 책 추가</Header>
+      <Header
+        onBack={() => {
+          setIsCreateReadBookPageOpen(false)
+          setReadBookState({
+            selectedReadBookIsbn: '',
+            bookInfo: undefined,
+            readBooks: {
+              rating: 0,
+              oneLineReview: '',
+              userBookTagList: [],
+              readDate: '',
+            },
+          })
+        }}
+        headerType={'DYNAMIC'}
+      >
+        읽은 책 추가
+      </Header>
 
       <section className="mt-[96px] flex flex-col gap-y-[32px] px-5">
         {/* 책 선택 */}

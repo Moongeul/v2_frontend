@@ -1,7 +1,7 @@
 import qs from 'query-string'
 import Image from 'next/image'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 
 import Input from '@/components/common/Input'
 import useDebounce from '@/hooks/useDebounce'
@@ -19,6 +19,8 @@ export default function BookField() {
   const [page, setPage] = useState(1)
   const [hasMore, setHasMore] = useState(true)
   const [isLoading, setIsLoading] = useState(false)
+  //수정 페이지에서 수정되지 않도록
+  const params = useParams()
 
   const setReadBookState = useReadBookStore((state) => state.setReadBookState)
 
@@ -26,14 +28,16 @@ export default function BookField() {
 
   // 검색어 바뀌면 초기화, 검색
   useEffect(() => {
-    setPage(1)
-    setBookListResult([])
-    setHasMore(true)
-    setReadBookState({ bookInfo: undefined })
+    if (!params.id) {
+      setPage(1)
+      setBookListResult([])
+      setHasMore(true)
+      setReadBookState({ bookInfo: undefined })
 
-    const query = { keyword: debouncedValue }
-    const url = qs.stringifyUrl({ url: '/mypage/read', query })
-    router.push(url)
+      const query = { keyword: debouncedValue }
+      const url = qs.stringifyUrl({ url: '/mypage/read', query })
+      router.push(url)
+    }
   }, [debouncedValue])
 
   // 데이터 fetch
@@ -74,13 +78,15 @@ export default function BookField() {
           책 선택
           <span className="text-brand-color"> *</span>
         </div>
-        <Input
-          leftIcon={<SearchIcon width={24} height={24} />}
-          placeholder={'책 제목 / 저자를 검색해보세요.'}
-          inputValue={searchValue}
-          setInputValue={setSearchValue}
-          type={'line'}
-        />
+        {!params.id && (
+          <Input
+            leftIcon={<SearchIcon width={24} height={24} />}
+            placeholder={'책 제목 / 저자를 검색해보세요.'}
+            inputValue={searchValue}
+            setInputValue={setSearchValue}
+            type={'line'}
+          />
+        )}
       </div>
       {bookInfo ? (
         <section onClick={() => {}} className="border-light-gray mt-2 flex justify-between rounded-[12px] border p-2">
@@ -91,16 +97,18 @@ export default function BookField() {
               <p className="caption-1 text-dark-gray">{bookInfo.author}</p>
             </div>
           </div>
-          <CancelIcon
-            width={18}
-            height={18}
-            className="whitespace-nowrap"
-            onClick={() => {
-              setReadBookState({ bookInfo: undefined })
-              setBookListResult([])
-              setSearchValue('')
-            }}
-          />
+          {!params.id && (
+            <CancelIcon
+              width={18}
+              height={18}
+              className="whitespace-nowrap"
+              onClick={() => {
+                setReadBookState({ bookInfo: undefined })
+                setBookListResult([])
+                setSearchValue('')
+              }}
+            />
+          )}
         </section>
       ) : (
         <div className={bookListResult.length > 0 ? 'h-[240px] overflow-y-scroll' : ''}>

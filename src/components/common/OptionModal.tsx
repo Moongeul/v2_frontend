@@ -4,7 +4,7 @@ import { ReactNode } from 'react'
 
 interface OptionModalProps {
   onClick: () => void
-  title: string
+  title: string | undefined
   children: ReactNode
 }
 export default function OptionModal({ onClick, title, children }: OptionModalProps) {

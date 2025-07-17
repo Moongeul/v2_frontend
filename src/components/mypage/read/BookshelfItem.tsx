@@ -2,13 +2,16 @@ import Image from 'next/image'
 import { KidStarIcon } from '@/assets/svgComponents'
 import { useRouter } from 'next/navigation'
 import { MonthlyReadBookType } from '@/types/mypage'
+import { useReadBookStore } from '@/store/readBookStore'
 
-export default function BookshelfItem({ title, readDate, bookImage, rating, id }: MonthlyReadBookType) {
+export default function BookshelfItem({ title, readDate, bookImage, rating, id, isbn }: MonthlyReadBookType) {
   const router = useRouter()
+  const setReadBookState = useReadBookStore((state) => state.setReadBookState)
   return (
     <div
       onClick={() => {
         router.push(`/mypage/read/${id}`)
+        setReadBookState({ selectedReadBookIsbn: isbn })
       }}
       className="flex flex-col items-center justify-center gap-y-2 border-b p-2"
     >

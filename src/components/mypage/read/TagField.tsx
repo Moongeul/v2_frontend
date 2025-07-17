@@ -1,10 +1,11 @@
 import { Dispatch, SetStateAction } from 'react'
 import { tagList } from '@/utils/common'
 import Tag from '@/components/common/Tag'
+import { UserBookTagType } from '@/types/mypage'
 
 interface TagFieldProps {
-  selectedTagList: string[]
-  setSelectedTagList: Dispatch<SetStateAction<string[]>>
+  selectedTagList: UserBookTagType[]
+  setSelectedTagList: Dispatch<SetStateAction<UserBookTagType[]>>
 }
 
 export default function TagField({ selectedTagList, setSelectedTagList }: TagFieldProps) {

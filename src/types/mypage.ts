@@ -15,6 +15,18 @@ export interface BookInfoType {
   description: string
 }
 
+export interface BookInfoDetailType extends BookInfoType {
+  reviewPreviewList: ReviewPreviewType[]
+  tagList: string[]
+}
+
+interface ReviewPreviewType {
+  profileImage: string
+  nickname: string
+  articleType: string
+  content: string
+}
+
 export interface ReadBookType {
   readDate?: string
   rating?: number
